@@ -33,13 +33,10 @@ const Section = () => {
     useEffect(() => {
         (async () => {
             const data = await fetchAlbums();
-
-            console.log(data);
-
+            console.log(data)
             if (data)
                 setAlbums(data);
         })();
-
     }, []);
 
     return <Box sx={styles.container}>
@@ -50,7 +47,7 @@ const Section = () => {
         {albums && <Grid container spacing={4}>
             {albums.map((album) => {
                 return <Grid item key={album.id} xs={2}>
-                    <AlbumCard name={album.name} imgSrc={album.image} follows={album.follows} />
+                    <AlbumCard title={album.title} imgSrc={album.image} follows={album.follows} />
                 </Grid>
             })}
         </Grid>}

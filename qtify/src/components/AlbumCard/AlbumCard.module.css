@@ -29,7 +29,7 @@
     color: var(--color-white);
 }
 
-.albumName {
+.albumTitle {
     padding: 0;
     margin: 0;
     font-weight: 400;
