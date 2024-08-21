@@ -16,32 +16,11 @@ const styles = {
     }
 }
 
-const Section = () => {
-
-    const [albums, setAlbums] = useState([]);
-
-    const fetchAlbums = async () => {
-        try {
-            const res = await axios('https://qtify-backend-labs.crio.do/albums/top');
-            return res.data;
-        } catch (e) {
-            console.log(e);
-            return null;
-        }
-    }
-
-    useEffect(() => {
-        (async () => {
-            const data = await fetchAlbums();
-            console.log(data)
-            if (data)
-                setAlbums(data);
-        })();
-    }, []);
+const Section = ({ title, albums }) => {
 
     return <Box sx={styles.container}>
         <Box sx={styles.title}>
-            <Typography>Top Albums</Typography>
+            <Typography>{title}</Typography>
             <Button>Collapse</Button>
         </Box>
         {albums && <Grid container spacing={4}>
