@@ -15,4 +15,5 @@ const SwiperButtonNext = (props) => {
     return <ButtonNext onClick={() => { swiper.slideNext() }} {...props} />
 }
 
+
 export { SwiperButtonPrev, SwiperButtonNext };
