@@ -1,14 +1,10 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
     width: 9.938rem;
-    color: var(--color-white);
-    background-color: var(--color-black);
 }
 
 .card {
     border-radius: 10px;
+    margin-bottom: 8px;
 }
 
 .cardImg {
@@ -17,9 +13,10 @@
 }
 
 .cardContent {
-    &:last-child{
+    &:last-child {
         padding-bottom: 4px;
     }
+
     padding: 4px 8px 4px 8px;
     margin: 0;
 }
@@ -27,11 +24,4 @@
 .cardChip {
     background-color: var(--color-black);
     color: var(--color-white);
-}
-
-.albumTitle {
-    padding: 0;
-    margin: 0;
-    font-weight: 400;
-    line-height: 21px;
 }

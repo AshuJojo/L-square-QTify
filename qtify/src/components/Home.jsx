@@ -46,10 +46,18 @@ const Home = () => {
     return <>
         <Navbar />
         <Hero />
-        <Section title={'Top Albums'} albums={topAlbums} />
-        <Divider color="primary" />
-        <Section title={'New Albums'} albums={newAlbums} />
-        <Divider color="primary" />
+        {topAlbums &&
+            <>
+                <Section title={'Top Albums'} albums={topAlbums} />
+                <Divider color="primary" />
+            </>
+        }
+        {newAlbums &&
+            <>
+                <Section title={'New Albums'} albums={newAlbums} />
+                <Divider color="primary" />
+            </>
+        }
     </>
 }
 
