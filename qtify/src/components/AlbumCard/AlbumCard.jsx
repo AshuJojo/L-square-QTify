@@ -1,7 +1,7 @@
 import { Box, Card, CardContent, CardMedia, Chip, Typography } from "@mui/material";
 import styles from './AlbumCard.module.css';
 
-const AlbumCard = ({ title, imgSrc, follows, likes }) => {
+const AlbumCard = ({ title, imgSrc, count, isAlbum }) => {
     return (
         <Box className={styles.container}>
             <Card className={styles.card}>
@@ -12,7 +12,7 @@ const AlbumCard = ({ title, imgSrc, follows, likes }) => {
                     image={imgSrc}
                 />
                 <CardContent className={styles.cardContent} >
-                    <Chip label={likes ? `${likes} likes` : `${follows} follows`} className={styles.cardChip} />
+                    <Chip label={`${count} ${isAlbum ? 'follows': 'likes'}`} className={styles.cardChip} />
                 </CardContent>
             </Card>
             <Typography>{title}</Typography>

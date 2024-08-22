@@ -7,14 +7,26 @@
 .title {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 2px;
+    margin-bottom: 1rem;
 }
 
 .carousel {
     width: 100%;
 }
 
-.gridItem{
-    display:flex; 
+.gridItem {
+    display: flex;
     justify-content: center;
+}
+
+.collapseBtn {
+    padding: 0;
+}
+
+.tab {
+    color: var(--color-white);
+}
+
+.tabs{
+    margin-bottom: 28px;
 }
