@@ -4,6 +4,7 @@ import Navbar from "./Navbar/Navbar";
 import Section from './Section/Section';
 import axios from 'axios';
 import { Divider } from "@mui/material";
+import FAQs from "./FAQs/FAQs";
 
 
 const Home = () => {
@@ -95,6 +96,8 @@ const Home = () => {
                 <Divider color="primary" />
             </>
         }
+
+        <FAQs />
     </>
 }
 
