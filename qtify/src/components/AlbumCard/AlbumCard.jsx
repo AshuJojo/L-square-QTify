@@ -12,7 +12,7 @@ const AlbumCard = ({ title, imgSrc, count, isAlbum }) => {
                     image={imgSrc}
                 />
                 <CardContent className={styles.cardContent} >
-                    <Chip label={`${count} ${isAlbum ? 'follows': 'likes'}`} className={styles.cardChip} />
+                    <Chip label={`${count} ${isAlbum ? 'follows' : 'likes'}`} className={styles.cardChip} />
                 </CardContent>
             </Card>
             <Typography>{title}</Typography>

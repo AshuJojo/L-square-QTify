@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import CustomCarousel from "../CustomCarousel/CustomCarousel";
 import styles from './Section.module.css';
 
-const Section = ({ title, data, genres, isAlbum }) => {
+const Section = ({ title, data, genres, isAlbum, handleSongClick }) => {
     const [value, setValue] = useState(0);
 
     const [collapsed, setCollapsed] = useState(true);
@@ -14,9 +14,9 @@ const Section = ({ title, data, genres, isAlbum }) => {
         const selectedTabId = event.target.id;
         setValue(newValue);
 
-        if(selectedTabId === 'all'){
+        if (selectedTabId === 'all') {
             setFilteredData(data);
-        }else{
+        } else {
             const newData = data.filter((item) => item.genre.key === selectedTabId);
             setFilteredData(newData);
         }
@@ -54,7 +54,7 @@ const Section = ({ title, data, genres, isAlbum }) => {
                     </Grid>
                 )
             ) :
-            (filteredData && 
+            (filteredData &&
                 <Box className={styles.tabsContainer}>
                     <Tabs value={value} onChange={handleChange} className={styles.tabs}>
                         <Tab label="All" id="all" key='all' className={styles.tab} />
@@ -68,7 +68,7 @@ const Section = ({ title, data, genres, isAlbum }) => {
                     </Tabs>
 
                     <Box className={styles.carousel}>
-                        <CustomCarousel data={filteredData} isAlbum={isAlbum} />
+                        <CustomCarousel data={filteredData} isAlbum={isAlbum} handleSongClick={handleSongClick}/>
                     </Box>
                 </Box>
             )

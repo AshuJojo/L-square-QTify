@@ -9,7 +9,7 @@ import { SwiperButtonNext, SwiperButtonPrev } from '../SwiperNavigation/SwiperNa
 import styles from './CustomCarousel.module.css';
 
 
-const CustomCarousel = ({ data, isAlbum }) => {
+const CustomCarousel = ({ data, isAlbum, handleSongClick }) => {
     const [isBeginning, setIsBeginning] = useState(true);
     const [isEnd, setIsEnd] = useState(false);
 
@@ -37,7 +37,7 @@ const CustomCarousel = ({ data, isAlbum }) => {
 
             {data.map((item) => {
                 return (
-                    <SwiperSlide key={item.id} className={styles.swiperSlide}>
+                    <SwiperSlide key={item.id} className={styles.swiperSlide} onClick={() => { if (!isAlbum) handleSongClick(item.id) }} >
                         <AlbumCard title={item.title} imgSrc={item.image} count={isAlbum ? item.follows : item.likes} isAlbum={isAlbum} />
                     </SwiperSlide>)
             })}

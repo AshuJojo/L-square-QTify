@@ -1,0 +1,23 @@
+.rhap_progress-bar {
+    background-color: var(--color-white) !important;
+}
+
+.rhap_progress-filled {
+    background-color: var(--color-primary) !important;
+}
+
+.rhap_progress-indicator {
+    display: none !important;
+}
+
+.rhap_play-pause-button>svg>path {
+    color: var(--color-primary) !important;
+}
+
+.rhap_volume-indicator {
+    background-color: var(--color-primary) !important;
+}
+
+.rhap_time{
+    color: var(--color-primary) !important;
+}

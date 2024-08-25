@@ -5,6 +5,7 @@ import Section from './Section/Section';
 import axios from 'axios';
 import { Divider } from "@mui/material";
 import FAQs from "./FAQs/FAQs";
+import SongPlayer from "./SongPlayer/SongPlayer";
 
 
 const Home = () => {
@@ -12,6 +13,8 @@ const Home = () => {
     const [newAlbums, setNewAlbums] = useState([]);
     const [songs, setSongs] = useState([]);
     const [genres, setGenres] = useState([]);
+
+    const [currentSong, setCurrentSong] = useState(null);
 
     const fetchTopAlbums = async () => {
         try {
@@ -53,6 +56,12 @@ const Home = () => {
         }
     }
 
+    const handleSongClick = (songId) => {
+        const song = songs.find(song => song.id === songId);
+
+        if (song) { setCurrentSong(song) };
+    }
+
 
     useEffect(() => {
         (async () => {
@@ -70,8 +79,10 @@ const Home = () => {
             if (genres)
                 setGenres(genres);
 
-            if (songs)
+            if (songs) {
                 setSongs(songs);
+                setCurrentSong(songs[0]);
+            }
         })();
     }, []);
 
@@ -92,12 +103,14 @@ const Home = () => {
         }
         {songs &&
             <>
-                <Section title={'Songs'} data={songs} isAlbum={false} genres={genres} />
+                <Section title={'Songs'} data={songs} isAlbum={false} genres={genres} handleSongClick={handleSongClick} />
                 <Divider color="primary" />
             </>
         }
 
         <FAQs />
+
+        {songs && <SongPlayer currentSong={currentSong} />}
     </>
 }
 
